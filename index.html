@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Marketplace</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="logo">Market<span>Place</span></h1>
+      
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for products...">
+      </div>
+      
+      <div class="cart-toggle" id="cart-toggle-btn" role="button" aria-label="Open Cart">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        <span class="cart-badge" id="cart-count">0</span>
+      </div>
+    </div>
+    
+    <div class="category-nav" id="category-nav">
+      <button class="cat-btn active" data-category="all">All</button>
+      <button class="cat-btn" data-category="electronics">Electronics</button>
+      <button class="cat-btn" data-category="jewelery">Jewelry</button>
+      <button class="cat-btn" data-category="men's clothing">Men's</button>
+      <button class="cat-btn" data-category="women's clothing">Women's</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Next-Generation Commerce</h2>
+        <p>Premium quality products at unbeatable prices.</p>
+        <button class="cta-button">Start Shopping</button>
+      </div>
+    </section>
+
+    <section class="controls-bar">
+      <div class="sort-dropdown">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="default">Recommended</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Modern Marketplace. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="close-btn" id="close-modal" aria-label="Close modal">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-image-container">
+          <img id="modal-img" src="" alt="Product Image">
+        </div>
+        <div class="modal-info">
+          <span class="category-badge" id="modal-category"></span>
+          <h3 id="modal-title"></h3>
+          <div class="rating">⭐ <span id="modal-rating"></span></div>
+          <p class="modal-price">$<span id="modal-price"></span></p>
+          <div class="description-container">
+            <p id="modal-desc"></p>
+          </div>
+          <div class="action-row">
+            <div class="quantity-selector">
+              <button id="modal-qty-minus">-</button>
+              <input type="number" id="modal-qty" value="1" min="1" readonly>
+              <button id="modal-qty-plus">+</button>
+            </div>
+            <button class="add-to-cart-btn" id="modal-add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-panel" id="cart-panel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-btn" id="close-cart" aria-label="Close cart">&times;</button>
+    </div>
+    
+    <div class="cart-items" id="cart-items">
+      </div>
+    
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>$<strong id="total">0.00</strong></span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <script src="./app.js"></script>
+</body>
+</html>
