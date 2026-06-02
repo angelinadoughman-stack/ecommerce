@@ -1,8 +1,10 @@
 /* 1. DESIGN SYSTEM & VARIABLES */
 :root {
   /* Brand Colors - Modern Slate Blue Palette */
-  --primary: #2b6cb0;
-  --primary-hover: #2c5282;
+  /* --primary: #2b6cb0;
+  --primary-hover: #2c5282; */
+  --primary: #38a169;        /* Changed from #2b6cb0 to Emerald Green */
+  --primary-hover: #2f855a;  /* Changed from #2c5282 to Darker Green Hover */
   --bg-main: #f8fafc;
   --bg-surface: #ffffff;
 
